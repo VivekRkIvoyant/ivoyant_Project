@@ -12,9 +12,9 @@ public interface VendorService {
 
     List<VendorDTO> getAllVendors();
 
-    VendorDTO getVendorById(int x_vendor_Id);
+    Vendor getVendorById(int x_vendor_Id);
 
-    Vendor createVendor(VendorDTO vendor);
+    VendorDTO createVendor(VendorDTO vendor);
 
     VendorDTO updateVendor(int x_vendor_Id,VendorDTO vendor);
 
