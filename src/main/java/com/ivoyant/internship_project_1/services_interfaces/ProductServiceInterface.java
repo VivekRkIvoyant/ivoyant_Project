@@ -5,7 +5,7 @@ import com.ivoyant.internship_project_1.models.Product;
 
 import java.util.List;
 
-public interface ProductService {
+public interface ProductServiceInterface {
 
     List<ProductDTO> getAllProducts();
 

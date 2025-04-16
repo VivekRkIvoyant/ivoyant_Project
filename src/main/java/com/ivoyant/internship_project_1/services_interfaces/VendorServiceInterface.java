@@ -1,14 +1,12 @@
 package com.ivoyant.internship_project_1.services_interfaces;
 
 
-import com.ivoyant.internship_project_1.dto_classes.SellerDTO;
 import com.ivoyant.internship_project_1.dto_classes.VendorDTO;
-import com.ivoyant.internship_project_1.models.Seller;
 import com.ivoyant.internship_project_1.models.Vendor;
 
 import java.util.List;
 
-public interface VendorService {
+public interface VendorServiceInterface {
 
     List<VendorDTO> getAllVendors();
 

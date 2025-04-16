@@ -5,7 +5,7 @@ import com.ivoyant.internship_project_1.models.Seller;
 
 import java.util.List;
 
-public interface SellerService {
+public interface SellerServiceInterface {
 
     List<SellerDTO> getAllSellers();
 
