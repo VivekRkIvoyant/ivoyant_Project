@@ -24,3 +24,4 @@ public class Seller {
     private LocalDateTime created_at = LocalDateTime.now();
 
 }
+
