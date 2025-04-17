@@ -1,4 +1,4 @@
-package com.ivoyant.internship_project_1.controllers;
+package com.ivoyant.internship_project_1.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

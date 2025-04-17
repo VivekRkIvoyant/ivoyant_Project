@@ -1,4 +1,4 @@
-package com.ivoyant.internship_project_1.configurables;
+package com.ivoyant.internship_project_1.configurable;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

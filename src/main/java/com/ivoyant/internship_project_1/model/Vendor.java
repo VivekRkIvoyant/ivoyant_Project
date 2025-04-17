@@ -1,4 +1,4 @@
-package com.ivoyant.internship_project_1.models;
+package com.ivoyant.internship_project_1.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,17 +11,12 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Seller {
+public class Vendor {
 
-    private int x_seller_id;
+    private int x_vendor_id;
 
-    private String seller_name;
-
-    private String seller_address;
-
-    private String seller_phone;
+    private String vendor_name;
 
     private LocalDateTime created_at = LocalDateTime.now();
 
 }
-

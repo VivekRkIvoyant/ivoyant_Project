@@ -1,4 +1,4 @@
-package com.ivoyant.internship_project_1.dto_classes;
+package com.ivoyant.internship_project_1.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

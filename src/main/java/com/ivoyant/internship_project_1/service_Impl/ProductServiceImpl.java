@@ -1,14 +1,23 @@
 package com.ivoyant.internship_project_1.service_Impl;
 
-import com.ivoyant.internship_project_1.dto_classes.ProductDTO;
-import com.ivoyant.internship_project_1.models.Product;
-import com.ivoyant.internship_project_1.services_interfaces.ProductServiceInterface;
+import com.ivoyant.internship_project_1.dto.ProductDTO;
+import com.ivoyant.internship_project_1.model.Product;
+import com.ivoyant.internship_project_1.services_interface.ProductServiceInterface;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
-@Service
+@Component
 public class ProductServiceImpl implements ProductServiceInterface {
+
+    private final JdbcTemplate jdbcTemplate;
+
+    public ProductServiceImpl(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public List<ProductDTO> getAllProducts() {
@@ -17,6 +26,8 @@ public class ProductServiceImpl implements ProductServiceInterface {
 
     @Override
     public ProductDTO createProduct(ProductDTO product) {
+        String query = "INSERT INTO product (product_name,product_description,product_price,product_status,seller_id) VALUES (?,?,?,?,?)";
+//        return jdbcTemplate.queryForObject()
         return null;
     }
 

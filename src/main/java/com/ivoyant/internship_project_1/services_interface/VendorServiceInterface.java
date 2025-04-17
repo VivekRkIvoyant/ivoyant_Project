@@ -1,8 +1,8 @@
-package com.ivoyant.internship_project_1.services_interfaces;
+package com.ivoyant.internship_project_1.services_interface;
 
 
-import com.ivoyant.internship_project_1.dto_classes.VendorDTO;
-import com.ivoyant.internship_project_1.models.Vendor;
+import com.ivoyant.internship_project_1.dto.VendorDTO;
+import com.ivoyant.internship_project_1.model.Vendor;
 
 import java.util.List;
 
@@ -19,7 +19,5 @@ public interface VendorServiceInterface {
     void deleteVendor(int x_vendor_Id);
 
     VendorDTO convertToDTO(Vendor vendor);
-
-    Vendor convertToEntity(VendorDTO vendorDTO);
 
 }

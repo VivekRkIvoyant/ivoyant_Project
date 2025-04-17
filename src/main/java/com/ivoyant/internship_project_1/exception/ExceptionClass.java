@@ -1,4 +1,4 @@
-package com.ivoyant.internship_project_1.exceptions;
+package com.ivoyant.internship_project_1.exception;
 
 public class ExceptionClass {
 

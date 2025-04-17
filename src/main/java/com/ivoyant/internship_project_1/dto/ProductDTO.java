@@ -1,17 +1,15 @@
-package com.ivoyant.internship_project_1.models;
+package com.ivoyant.internship_project_1.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class ProductDTO {
 
     private int x_product_id;
 
@@ -23,8 +21,6 @@ public class Product {
 
     private String product_status;
 
-    private LocalDateTime created_at = LocalDateTime.now();
-
-    private LocalDateTime updated_at;
+    private int seller_id;
 
 }

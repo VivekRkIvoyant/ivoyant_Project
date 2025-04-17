@@ -1,7 +1,7 @@
-package com.ivoyant.internship_project_1.services_interfaces;
+package com.ivoyant.internship_project_1.services_interface;
 
-import com.ivoyant.internship_project_1.dto_classes.SellerDTO;
-import com.ivoyant.internship_project_1.models.Seller;
+import com.ivoyant.internship_project_1.dto.SellerDTO;
+import com.ivoyant.internship_project_1.model.Seller;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public interface SellerServiceInterface {
 
     SellerDTO getSellerById(int x_seller_Id);
 
-    SellerDTO createSeller(SellerDTO sellerDTO);
+    Seller createSeller(SellerDTO sellerDTO);
 
     SellerDTO updateSeller(int x_seller_Id, SellerDTO sellerDTO);
 
@@ -23,6 +23,6 @@ public interface SellerServiceInterface {
 
     SellerDTO convertToDTO(Seller seller);
 
-    Seller convertToEntity(SellerDTO sellerDTO);
-
 }
+
+

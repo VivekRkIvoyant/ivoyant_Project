@@ -1,7 +1,7 @@
-package com.ivoyant.internship_project_1.services_interfaces;
+package com.ivoyant.internship_project_1.services_interface;
 
-import com.ivoyant.internship_project_1.dto_classes.ProductDTO;
-import com.ivoyant.internship_project_1.models.Product;
+import com.ivoyant.internship_project_1.dto.ProductDTO;
+import com.ivoyant.internship_project_1.model.Product;
 
 import java.util.List;
 
