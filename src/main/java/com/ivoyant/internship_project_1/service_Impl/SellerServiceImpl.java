@@ -21,7 +21,15 @@ public class SellerServiceImpl implements SellerServiceInterface {
 
     @Override
     public List<SellerDTO> getAllSellers() {
-        return List.of();
+        String query = "SELECT seller_id , seller_name , seller_address , seller_phone FROM seller";
+        return jdbcTemplate.query(query,(rs,rowNum)->{
+            SellerDTO sellerDTO = new SellerDTO();
+            sellerDTO.setX_seller_id(rs.getInt("seller_id"));
+            sellerDTO.setSeller_name(rs.getString("seller_name"));
+            sellerDTO.setSeller_address(rs.getString("seller_address"));
+            sellerDTO.setSeller_phone(rs.getString("seller_phone"));
+            return sellerDTO;
+        });
     }
 
     @Override
@@ -37,7 +45,8 @@ public class SellerServiceImpl implements SellerServiceInterface {
                     ));
         }catch (Exception e){
             log.error("Seller Not Found");
-            throw new RuntimeException("Seller Not Found: "+e.getMessage());
+//            throw new RuntimeException("Seller Not Found: "+e.getMessage());
+            return null;
         }
     }
 
@@ -70,9 +79,29 @@ public class SellerServiceImpl implements SellerServiceInterface {
         }
     }
 
+    @Transactional
     @Override
     public SellerDTO updateSeller(int x_seller_Id, SellerDTO sellerDTO) {
-        return null;
+        SellerDTO existingSeller = getSellerById(x_seller_Id);
+        if(existingSeller==null){
+            throw new RuntimeException("Seller Not Found With Id: "+x_seller_Id);
+        }
+        String query = "UPDATE seller SET seller_name = ?,seller_address = ?, seller_phone = ? WHERE seller_id = ?";
+        int rowsAffected = jdbcTemplate.update(query,
+                sellerDTO.getSeller_name(),
+                sellerDTO.getSeller_address(),
+                sellerDTO.getSeller_phone(),
+                x_seller_Id);
+        if(rowsAffected==0){
+            log.error("Update failed for Seller ID: " + x_seller_Id);
+            throw new RuntimeException("Seller Not Found: "+x_seller_Id);
+        }
+        SellerDTO updatedSeller = new SellerDTO();
+        updatedSeller.setX_seller_id(x_seller_Id);
+        updatedSeller.setSeller_name(sellerDTO.getSeller_name());
+        updatedSeller.setSeller_address(sellerDTO.getSeller_address());
+        updatedSeller.setSeller_phone(sellerDTO.getSeller_phone());
+        return updatedSeller;
     }
 
     @Transactional
@@ -89,12 +118,24 @@ public class SellerServiceImpl implements SellerServiceInterface {
 
     @Override
     public SellerDTO findSellerByName(String seller_name) {
-        return null;
+        String query = "SELECT seller_name, seller_address, seller_phone FROM seller WHERE seller_name = ?";
+        return jdbcTemplate.queryForObject(query, new Object[]{seller_name},
+                (rs, rowNum) -> {
+                    SellerDTO sellerDTO = new SellerDTO();
+                    sellerDTO.setSeller_name(rs.getString("seller_name"));
+                    sellerDTO.setSeller_address(rs.getString("seller_address"));
+                    sellerDTO.setSeller_phone(rs.getString("seller_phone"));
+                    return sellerDTO;
+                }
+        );
     }
 
     @Override
     public boolean existsById(int x_seller_Id) {
-
+        SellerDTO result = getSellerById(x_seller_Id);
+        if(result!=null){
+            return true;
+        }
         return false;
     }
 
