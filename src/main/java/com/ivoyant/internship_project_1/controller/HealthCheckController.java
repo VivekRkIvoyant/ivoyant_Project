@@ -1,4 +1,4 @@
-package com.ivoyant.internship_project_1.controllers;
+package com.ivoyant.internship_project_1.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +13,6 @@ public class HealthCheckController {
     @GetMapping("/healthCheck")
     public ResponseEntity<String> healthCheck(){
         return new ResponseEntity<>("200 - OK", HttpStatus.OK);
-    }
-
-    @GetMapping("/check")
-    public ResponseEntity<String> check(){
-        return new ResponseEntity<>("Working Fine",HttpStatus.OK);
     }
 
     @GetMapping("/ok")

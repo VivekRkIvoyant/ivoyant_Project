@@ -1,4 +1,4 @@
-package com.ivoyant.internship_project_1.dto_classes;
+package com.ivoyant.internship_project_1.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,14 +9,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class InventoryDTO {
+public class TransferStats {
 
-    private int x_inventory_id;
+    private int x_transfer_id;
 
     private int x_product_id;
 
     private int x_seller_id;
 
-    private int quantity;
+    private int quantity_moved;
 
 }
